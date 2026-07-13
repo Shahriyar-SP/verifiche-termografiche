@@ -4,18 +4,23 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy import create_engine, Column, Integer, String, Text
 from sqlalchemy.orm import declarative_base, sessionmaker, Session
+import os 
+from dotenv import load_dotenv
 
-# --- ۱. تنظیمات اتصال به دیتابیس ---
-# حتماً جای YOUR_PASSWORD رمز خودت رو بنویس (مثلا postgresql://postgres:1234@localhost...)
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:1234@localhost/verifiche_db"
+#Loading environment variables from a .env file
+load_dotenv()
+
+# Reading the database URL without exposing it in the code
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-# --- ۲. ساختار جدولِ فرم تماس ---
+# Contact form table structure
 class ContactRequest(Base):
-    __tablename__ = "contatti"  # اسم جدول تو دیتابیس
+    __tablename__ = "contatti"  # Name of the table in the database
     
     id = Column(Integer, primary_key=True, index=True)
     ragione_sociale = Column(String, index=True)
@@ -25,15 +30,15 @@ class ContactRequest(Base):
     tipo_verifica = Column(String)
     messaggio = Column(Text)
 
-# --- ۳. دستور ساخت جدول ---
+# Table creation command
 Base.metadata.create_all(bind=engine)
 
-# --- ۴. تنظیمات سایت (کدهای قبلی) ---
+# Landing page handling
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
-# یه تابع کمکی برای باز و بسته کردن دیتابیس
+# helping function to open and close the database
 def get_db():
     db = SessionLocal()
     try:
@@ -45,18 +50,23 @@ def get_db():
 def read_root(request: Request):
     return templates.TemplateResponse(request, "index.html")
 
-# --- این مسیر جدید رو برای دریافت فرم اضافه کن ---
+# form submission handling
 @app.post("/submit", response_class=HTMLResponse)
 def submit_form(
-    ragione_sociale: str = Form(...),
-    partita_iva: str = Form(None),
-    email: str = Form(...),
-    telefono: str = Form(...),
+    request: Request,
+    ragione_sociale: str = Form(..., max_length=100),
+    partita_iva: str = Form(None, pattern="^[0-9]{11}$"),
+    email: str = Form(..., max_length=100),
+    telefono: str = Form(..., max_length=20),
     tipo_verifica: str = Form(...),
-    messaggio: str = Form(...),
+    messaggio: str = Form(..., max_length=1000),
+    fax_number: str = Form(None),  # trap for bots
     db: Session = Depends(get_db)
 ):
-    # ۱. ساخت یک رکورد جدید با اطلاعات فرم
+    if fax_number:
+        return templates.TemplateResponse(request, "success.html")
+    
+    # making a new record with the form information
     nuovo_contatto = ContactRequest(
         ragione_sociale=ragione_sociale,
         partita_iva=partita_iva,
@@ -66,14 +76,8 @@ def submit_form(
         messaggio=messaggio
     )
     
-    # ۲. ذخیره در دیتابیس
+    # saving in the database
     db.add(nuovo_contatto)
     db.commit()
     
-    # ۳. ارسال یه کد HTML ساده برای نمایش پیام موفقیت به جای فرم
-    return """
-    <div style="background-color: #dcfce7; border: 2px solid #22c55e; padding: 30px; border-radius: 8px; text-align: center;">
-        <h3 style="color: #166534; margin-bottom: 10px;">✅ Richiesta Inviata con Successo!</h3>
-        <p style="color: #15803d; font-size: 1.1rem;">Grazie. Il nostro team ti contatterà al più presto.</p>
-    </div>
-    """
+    return templates.TemplateResponse(request, "success.html")

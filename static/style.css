@@ -1,402 +1,419 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8fafc; 
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8fafc;
 }
 
 .hero {
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-    margin-bottom: 40px;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 .hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 .hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-    opacity: 0.9;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
 }
-
 
 main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-
-#about, #contact {
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin-bottom: 40px;
+#about,
+#contact {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
 }
 
-#about h2, #contact h2 {
-    color: #1e3a8a;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 2rem;
+#about h2,
+#contact h2 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2rem;
 }
 
 #about ul {
-    list-style-type: none;
-    margin-top: 20px;
+  list-style-type: none;
+  margin-top: 20px;
 }
 
 #about ul li {
-    background: #f1f5f9;
-    margin-bottom: 15px;
-    padding: 15px 20px;
-    border-left: 5px solid #3b82f6;
-    border-radius: 6px;
-    font-size: 1.1rem;
+  background: #f1f5f9;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  border-left: 5px solid #3b82f6;
+  border-radius: 6px;
+  font-size: 1.1rem;
 }
-
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 600px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+input,
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-input:focus, textarea:focus {
-    outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 button {
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #1d4ed8;
+  background-color: #1d4ed8;
 }
 
 footer {
-    text-align: center;
-    padding: 30px;
-    color: #94a3b8;
-    margin-top: 50px;
-    border-top: 1px solid #e2e8f0;
+  text-align: center;
+  padding: 30px;
+  color: #94a3b8;
+  margin-top: 50px;
+  border-top: 1px solid #e2e8f0;
 }
 
-/* --- استایل‌های جدید برای ۳ بخش اضافه شده --- */
-
 .info-section {
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin-bottom: 40px;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
 }
 
 .info-section h2 {
-    color: #1e3a8a;
-    margin-bottom: 25px;
-    text-align: center;
-    font-size: 2rem;
+  color: #1e3a8a;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .info-section > p {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #475569;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #475569;
 }
 
-/* گرید برای مراحل انجام کار */
+/* grid for workflow */
 .steps-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap; /* این باعث میشه تو گوشی‌های موبایل، باکس‌ها بیفتن زیر هم */
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* this makes the boxes stack vertically on mobile devices */
 }
 
 .step {
-    flex: 1;
-    min-width: 250px;
-    background: #f8fafc;
-    padding: 25px 20px;
-    border-radius: 8px;
-    border-top: 4px solid #3b82f6;
-    text-align: center;
-    transition: transform 0.3s ease;
+  flex: 1;
+  min-width: 250px;
+  background: #f8fafc;
+  padding: 25px 20px;
+  border-radius: 8px;
+  border-top: 4px solid #3b82f6;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .step:hover {
-    transform: translateY(-5px); /* یه افکت ریز موقعی که موس میره روش */
+  transform: translateY(-5px); /* a subtle effect when the mouse hovers over the box */
 }
 
 .step h3 {
-    color: #0f172a;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
 }
 
-/* استایل آکاردئونی برای سوالات متداول */
+/* style for the accordion for frequently asked questions */
 details {
-    background: #f1f5f9;
-    margin-bottom: 10px;
-    padding: 15px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    border-left: 4px solid #cbd5e1;
-    transition: all 0.3s ease;
+  background: #f1f5f9;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  border-left: 4px solid #cbd5e1;
+  transition: all 0.3s ease;
 }
 
 details:hover {
-    border-left-color: #3b82f6;
+  border-left-color: #3b82f6;
 }
 
 summary {
-    font-weight: bold;
-    color: #1e3a8a;
-    font-size: 1.1rem;
-    outline: none;
-    list-style: none; /* حذف فلش پیش‌فرض در بعضی مرورگرها */
+  font-weight: bold;
+  color: #1e3a8a;
+  font-size: 1.1rem;
+  outline: none;
+  list-style: none; /* remove the default arrow in some browsers */
 }
 
-/* اضافه کردن فلش کاستوم برای زیبایی */
+/* add a custom arrow for better appearance */
 summary::-webkit-details-marker {
-    display: none;
+  display: none;
 }
 summary::before {
-    content: "▼";
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 0.9rem;
-    color: #3b82f6;
-    transition: transform 0.3s ease;
+  content: "▼";
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 0.9rem;
+  color: #3b82f6;
+  transition: transform 0.3s ease;
 }
 details[open] summary::before {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 details p {
-    margin-top: 15px;
-    color: #475569;
-    border-top: 1px solid #cbd5e1;
-    padding-top: 15px;
-    line-height: 1.7;
+  margin-top: 15px;
+  color: #475569;
+  border-top: 1px solid #cbd5e1;
+  padding-top: 15px;
+  line-height: 1.7;
 }
 
 #contact p {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #475569;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #475569;
 }
 
-/* استایل لیستِ تیک‌دار برای بخش چرا ما */
+/* style for the checklist for the "why us" section */
 .check-list {
-    list-style-type: none;
-    text-align: left;
-    max-width: 700px;
-    margin: 0 auto;
+  list-style-type: none;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .check-list li {
-    background: #f8fafc;
-    margin-bottom: 15px;
-    padding: 15px 20px;
-    border-radius: 8px;
-    border-left: 4px solid #10b981; /* یه رنگ سبز قشنگ برای تایید */
-    font-size: 1.1rem;
-    color: #334155;
+  background: #f8fafc;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #10b981; /* a nice green color for confirmation */
+  font-size: 1.1rem;
+  color: #334155;
 }
 
-/* استایل خاص برای باکس تخفیف INAIL */
+/* style for the INAIL discount box */
 .inail-box {
-    background: #f0fdf4; /* پس‌زمینه سبز ملایم که حس پول و سود رو میده */
-    border: 2px solid #22c55e;
+  background: #f0fdf4;
+  border: 2px solid #22c55e;
 }
 
 .inail-box h2 {
-    color: #166534;
+  color: #166534;
 }
 
 .inail-highlight {
-    margin-top: 20px !important;
-    font-weight: bold;
-    color: #15803d !important;
-    font-size: 1.2rem !important;
+  margin-top: 20px !important;
+  font-weight: bold;
+  color: #15803d !important;
+  font-size: 1.2rem !important;
 }
 
-/* استایل خاص برای باکس قوانین (رنگ متفاوت برای جلب توجه) */
+/* style for the normative box (different color to grab attention) */
 .normative-box {
-    background: #f0fdf4; /* پس‌زمینه سبز خیلی روشن */
-    border: 1px solid #bbf7d0;
+  background: #f0fdf4; /* light green background */
+  border: 1px solid #bbf7d0;
 }
 
 .normative-box h2 {
-    color: #166534;
+  color: #166534;
 }
 
 .normative-box p {
-    color: #15803d;
-    font-weight: 500;
+  color: #15803d;
+  font-weight: 500;
 }
 
-/* استایل‌های فرم B2B */
+/* style for the B2B form */
 .b2b-form {
-    max-width: 700px;
+  max-width: 700px;
 }
 
 .form-row {
-    display: flex;
-    gap: 15px;
-    width: 100%;
+  display: flex;
+  gap: 15px;
+  width: 100%;
 }
 
-/* تو موبایل فیلدها بیفتن زیر هم */
+/* this makes the fields stack vertically on mobile devices*/
 @media (max-width: 600px) {
-    .form-row {
-        flex-direction: column;
-    }
+  .form-row {
+    flex-direction: column;
+  }
 }
 
 select {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
-    color: #475569;
-    background-color: white;
-    cursor: pointer;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #475569;
+  background-color: white;
+  cursor: pointer;
 }
 
 select:focus {
-    outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 .privacy-checkbox {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 0.9rem;
-    color: #64748b;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .privacy-checkbox input[type="checkbox"] {
-    width: auto;
-    margin-top: 5px;
-    cursor: pointer;
+  width: auto;
+  margin-top: 5px;
+  cursor: pointer;
 }
 
-
-/* --- جادوی اسکرول نرم --- */
+/*Smooth Scroll */
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* این باعث میشه وقتی اسکرول میشه، منو نیفته روی تیترها */
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* this makes the menu not overlap the headings when scrolling */
 }
 
-/* --- استایل منوی لنگری --- */
+/* --- Anchor Navigation --- */
 .anchor-nav {
-    background-color: white;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    position: sticky; /* این دستور منو رو اون بالا می‌چسبونه */
-    top: 0;
-    z-index: 1000;
-    padding: 15px 20px;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: sticky; /* This makes the menu stick to the top */
+  top: 0;
+  z-index: 1000;
+  padding: 15px 20px;
 }
 
 .anchor-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap; /* برای تو گوشی که بیفتن زیر هم */
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* for mobile devices that wrap to the next line */
 }
 
 .anchor-nav a {
-    text-decoration: none;
-    color: #475569;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #475569;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 .anchor-nav a:hover {
-    color: #2563eb;
+  color: #2563eb;
 }
 
-/* دکمه فرم تو منو */
+/* --- Navigation Button --- */
 .nav-btn {
-    background-color: #2563eb;
-    color: white !important;
-    padding: 8px 20px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
+  background-color: #2563eb;
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
 .nav-btn:hover {
-    background-color: #1d4ed8;
+  background-color: #1d4ed8;
 }
 
-/* --- استایل عکس --- */
+/* --- Hero Image Container --- */
 .hero-image-container {
-    max-width: 900px;
-    margin: -20px auto 40px auto; /* این عکس رو کمی می‌کشه بالا سمت کادر آبی */
-    text-align: center;
-    padding: 0 20px;
+  max-width: 900px;
+  margin: -20px auto 40px auto; /* this makes the image slightly overlap the blue box */
+  text-align: center;
+  padding: 0 20px;
 }
 
 .hero-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
 }
 
-/* استایل منو برای موبایل */
+/* style for the mobile menu */
 @media (max-width: 600px) {
-    .anchor-nav ul {
-        gap: 15px;
-    }
-    .anchor-nav a {
-        font-size: 0.9rem;
-    }
+  .anchor-nav ul {
+    gap: 15px;
+  }
+  .anchor-nav a {
+    font-size: 0.9rem;
+  }
+}
+
+.char-counter {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 5px;
+}
+
+/* style for the honeypot field */
+.honeypot-field {
+  position: absolute;
+  left: -5000px;
+}
+
+/* style for the loading state of the button */
+.btn-loading {
+  background-color: #94a3b8 !important;
+  cursor: not-allowed !important;
 }

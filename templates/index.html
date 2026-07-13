@@ -5,10 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Verifiche Termografiche Professionali | Diagnosi Energetica</title>
     <link rel="stylesheet" href="/static/style.css" />
+    <!-- SEO & GEO Meta Tags (Ottimizzato per Tutta Italia) -->
+    <meta
+      name="description"
+      content="Servizi di perizia e indagine termografica certificata per aziende in tutta Italia. Prevenzione guasti, sicurezza elettrica e ottimizzazione energetica. Richiedi un preventivo."
+    />
+    <meta name="geo.region" content="IT" />
+    <meta name="geo.placename" content="Italia" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Verifiche e Perizie Termografiche",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Verifiche Termografiche Professionali",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IT"
+          }
+        },
+        "description": "Indagini termografiche certificate su tutto il territorio nazionale per il monitoraggio di impianti elettrici, industriali e fotovoltaici.",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Italy"
+        }
+      }
+    </script>
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
   <body>
-
     <nav class="anchor-nav">
       <ul>
         <li><a href="#about">Vantaggi</a></li>
@@ -29,7 +61,11 @@
       </section>
 
       <div class="hero-image-container">
-        <img src="/static/termografia.jpg" alt="Ispezione termografica su quadro elettrico" class="hero-img">
+        <img
+          src="/static/termografia.jpg"
+          alt="Ispezione termografica su quadro elettrico"
+          class="hero-img"
+        />
       </div>
 
       <section id="about">
@@ -211,15 +247,27 @@
           Compila il modulo sottostante per essere ricontattato dal nostro team.
         </p>
 
-        <!-- اضافه کردن HTMX به فرم -->
+        <!-- Adding HTMX to the form-->
+        <!-- Using Alpine.js for having a dynamic button state for form submission -->
         <form
           id="contact-form"
           class="b2b-form"
           hx-post="/submit"
           hx-target="#contact-form"
           hx-swap="outerHTML"
+          x-data="{ inviando: false }"
+          @submit="inviando = true"
         >
-          <!-- ردیف اول: نام شرکت و شماره مالیاتی -->
+          <div class="honeypot-field" aria-hidden="true">
+            <input
+              type="text"
+              name="fax_number"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- first row: company name and tax number -->
           <div class="form-row">
             <input
               type="text"
@@ -227,10 +275,17 @@
               placeholder="Ragione Sociale (Obbligatorio)"
               required
             />
-            <input type="text" name="partita_iva" placeholder="Partita IVA" />
+            <input
+              type="text"
+              name="partita_iva"
+              placeholder="Partita IVA (11 Cifre)"
+              pattern="[0-9]{11}"
+              title="La Partita IVA deve contenere esattamente 11 cifre numeriche."
+              maxlength="11"
+            />
           </div>
 
-          <!-- ردیف دوم: ایمیل و تلفن -->
+          <!-- second row: email and phone -->
           <div class="form-row">
             <input
               type="email"
@@ -242,28 +297,36 @@
               type="tel"
               name="telefono"
               placeholder="Telefono (Obbligatorio)"
+              pattern="^\+?[0-9\s\-]{8,15}$"
+              title="Inserisci un numero di telefono valido (es. +39 123 456 7890)"
               required
             />
           </div>
 
-          <!-- منوی کشویی برای نوع درخواست -->
+          <!-- dropdown menu for the type of request -->
           <select name="tipo_verifica" required>
             <option value="" disabled selected>
               Tipo di verifica desiderata...
             </option>
             <option value="termografia">Indagine Termografica</option>
-            <option value="dpr462">Verifiche DPR 462/01</option>
             <option value="altro">Altro</option>
           </select>
 
-          <textarea
-            name="messaggio"
-            placeholder="Come possiamo aiutarti?"
-            rows="4"
-            required
-          ></textarea>
+          <div x-data="{ testo: '' }" style="width: 100%">
+            <textarea
+              name="messaggio"
+              placeholder="Come possiamo aiutarti? (Max 1000 caratteri)"
+              rows="4"
+              maxlength="1000"
+              required
+              x-model="testo"
+            ></textarea>
+            <div class="char-counter">
+              Caratteri: <span x-text="testo.length"></span> / 1000
+            </div>
+          </div>
 
-          <!-- چک‌باکس حریم خصوصی -->
+          <!-- privacy checkbox -->
           <div class="privacy-checkbox">
             <input type="checkbox" id="privacy" required />
             <label for="privacy"
@@ -272,7 +335,14 @@
             >
           </div>
 
-          <button type="submit">Invia Richiesta</button>
+          <button
+            type="submit"
+            x-bind:disabled="inviando"
+            x-bind:class="inviando ? 'btn-loading' : ''"
+            x-text="inviando ? 'Inviando...' : 'Invia Richiesta'"
+          >
+            Invia Richiesta
+          </button>
         </form>
       </section>
     </main>
