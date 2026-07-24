@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Verifiche Termografiche Professionali | Diagnosi Energetica</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="/static/style.css" />
     <!-- SEO & GEO Meta Tags (Ottimizzato per Tutta Italia) -->
     <meta
@@ -42,13 +47,20 @@
   </head>
   <body>
     <nav class="anchor-nav">
-      <ul>
-        <li><a href="#about">Vantaggi</a></li>
-        <li><a href="#process">Come Funziona</a></li>
-        <li><a href="#settori">Settori</a></li>
-        <li><a href="#inail">Sgravi INAIL</a></li>
-        <li><a href="#contact" class="nav-btn">Richiedi Preventivo</a></li>
-      </ul>
+      <div class="nav-container">
+        <!-- Temporary text logo on the left side -->
+        <div class="nav-logo">
+          <i class="fa-solid fa-temperature-half"></i>
+          <span>Thermo<strong>Pro</strong></span>
+        </div>
+        <ul>
+          <li><a href="#about">Vantaggi</a></li>
+          <li><a href="#process">Come Funziona</a></li>
+          <li><a href="#settori">Settori</a></li>
+          <li><a href="#inail">Sgravi INAIL</a></li>
+          <li><a href="#contact" class="nav-btn">Richiedi Preventivo</a></li>
+        </ul>
+      </div>
     </nav>
 
     <main>
@@ -68,7 +80,25 @@
         />
       </div>
 
-      <section id="about">
+      <!-- Trust Badges -->
+      <section id="trust-badges" class="trust-badges-section">
+        <div class="badge">
+          <i class="fa-solid fa-certificate"></i>
+          <span>Certificazione ISO 9712</span>
+        </div>
+        <div class="badge">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Conformità Normative CEI</span>
+        </div>
+        <div class="badge">
+          <i class="fa-solid fa-percent"></i>
+          <span>Sgravi Fiscali INAIL</span>
+        </div>
+      </section>
+
+      <br />
+
+      <section id="about" class="info-section">
         <h2>I Vantaggi della Termografia</h2>
         <p>
           La termografia a infrarossi è lo strumento più efficace per l'indagine
@@ -76,15 +106,97 @@
           tutto il territorio nazionale, i nostri tecnici specializzati ti
           aiutano a:
         </p>
-        <ul>
-          <li>Individuare dispersioni energetiche e ponti termici.</li>
-          <li>Prevenire guasti agli impianti elettrici e fotovoltaici.</li>
-          <li>
-            Rilevare umidità e perdite d'acqua senza interventi invasivi
-            (nessuna demolizione).
-          </li>
-        </ul>
+        <div class="steps-grid margin-top-30">
+          <div class="step about-step">
+            <i class="fa-solid fa-temperature-arrow-down fa-2x"></i>
+            <h3>Dispersioni ed Efficienza</h3>
+            <p>
+              Individuare dispersioni energetiche e ponti termici per
+              ottimizzare i consumi.
+            </p>
+          </div>
+          <div class="step about-step">
+            <i class="fa-solid fa-bolt fa-2x"></i>
+            <h3>Prevenzione Guasti Elettrici</h3>
+            <p>
+              Prevenire guasti agli impianti elettrici e fotovoltaici evitando
+              fermi macchina.
+            </p>
+          </div>
+          <div class="step about-step">
+            <i class="fa-solid fa-droplet fa-2x"></i>
+            <h3>Ricerca Perdite</h3>
+            <p>
+              Rilevare umidità e perdite d'acqua senza interventi invasivi
+              (nessuna demolizione).
+            </p>
+          </div>
+        </div>
       </section>
+
+      <section id="copertura" class="info-section">
+        <h2>Copertura Nazionale Garantita</h2>
+        <p>
+          Non siamo solo un'agenzia virtuale. Operiamo con team tecnici
+          distribuiti strategicamente per garantire interventi rapidi in tutta
+          Italia:
+        </p>
+
+        <!-- Flexbox container for 2 columns -->
+        <div class="copertura-container margin-top-30">
+          <!-- First column: Italy map -->
+          <div class="copertura-map">
+            <img src="/static/mappa.png" alt="Mappa Copertura Italia" />
+          </div>
+
+          <div class="copertura-content">
+            <div class="step copertura-step">
+              <i class="fa-solid fa-location-dot fa-2x"></i>
+              <h3>Hub Nord-Ovest</h3>
+              <p>
+                Base operativa a <strong>Torino</strong> per interventi rapidi e
+                diretti in tutto il Piemonte, Valle d'Aosta e Liguria.
+              </p>
+            </div>
+            <div class="step copertura-step">
+              <i class="fa-solid fa-building fa-2x"></i>
+              <h3>Hub Lombardia</h3>
+              <p>
+                Coordinamento da <strong>Milano</strong> per coprire con la
+                massima efficienza tutto il centro-nord e il Triveneto.
+              </p>
+            </div>
+            <div class="step copertura-step">
+              <i class="fa-solid fa-map-location-dot fa-2x"></i>
+              <h3>Centro e Sud Italia</h3>
+              <p>
+                Rete di tecnici certificati partner per garantire la stessa
+                velocità di intervento fino alle isole.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats and Numbers section -->
+      <section id="stats" class="stats-section margin-top-30">
+        <div class="stats-container">
+          <div class="stat-box">
+            <h3 class="stat-number">20</h3>
+            <p class="stat-label">Regioni Coperte in Italia</p>
+          </div>
+          <div class="stat-box">
+            <h3 class="stat-number">48h</h3>
+            <p class="stat-label">Intervento Garantito</p>
+          </div>
+          <div class="stat-box">
+            <h3 class="stat-number">ISO 9712</h3>
+            <p class="stat-label">Operatori Certificati</p>
+          </div>
+        </div>
+      </section>
+
+      <br />
 
       <section id="process" class="info-section">
         <h2>Come Funziona?</h2>
@@ -221,6 +333,23 @@
           </p>
         </details>
         <details>
+          <summary>Che validità legale ha il vostro report?</summary>
+          <p>
+            Tutte le nostre perizie sono condotte da tecnici di II livello
+            certificati <strong>UNI EN ISO 9712</strong>. Il report tecnico
+            rilasciato ha piena validità legale ed è riconosciuto da
+            assicurazioni e organi di controllo (es. INAIL).
+          </p>
+        </details>
+        <details>
+          <summary>Ogni quanto è consigliato fare una verifica?</summary>
+          <p>
+            Consigliamo una verifica con cadenza annuale. Oltre a garantire la
+            massima sicurezza preventiva, l'indagine annuale è spesso un
+            requisito per ottenere lo sconto sul premio INAIL (Modello OT23).
+          </p>
+        </details>
+        <details>
           <summary>In quali zone d'Italia operate?</summary>
           <p>
             Il nostro team di esperti è operativo su tutto il territorio
@@ -242,7 +371,11 @@
       <br />
 
       <section id="contact">
-        <h2>Richiedi un Preventivo Gratuito</h2>
+        <!-- New title with icon -->
+        <h2>
+          <i class="fa-solid fa-envelope-open-text contact-title-icon"></i>
+          Richiedi un Preventivo Gratuito
+        </h2>
         <p>
           Compila il modulo sottostante per essere ricontattato dal nostro team.
         </p>
@@ -312,7 +445,8 @@
             <option value="altro">Altro</option>
           </select>
 
-          <div x-data="{ testo: '' }" style="width: 100%">
+          <!-- Replacing In-Line style with textarea-wrapper class -->
+          <div x-data="{ testo: '' }" class="textarea-wrapper">
             <textarea
               name="messaggio"
               placeholder="Come possiamo aiutarti? (Max 1000 caratteri)"
@@ -339,9 +473,11 @@
             type="submit"
             x-bind:disabled="inviando"
             x-bind:class="inviando ? 'btn-loading' : ''"
-            x-text="inviando ? 'Inviando...' : 'Invia Richiesta'"
           >
-            Invia Richiesta
+            <i class="fa-solid fa-paper-plane btn-icon"></i>
+            <span x-text="inviando ? 'Inviando...' : 'Invia Richiesta'"
+              >Invia Richiesta</span
+            >
           </button>
         </form>
       </section>
@@ -350,5 +486,30 @@
     <footer>
       <p>&copy; 2026 Verifiche Termografiche - Tutti i diritti riservati.</p>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" title="Torna su">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Script for button appearance and disappearance -->
+    <script>
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+      
+      // when the user scrolls down 300px from the top of the document, show the button
+      window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          scrollBtn.classList.add("show-btn"); // اگه بیشتر از 300 پیکسل اومد پایین، دکمه رو نشون بده
+        } else {
+          scrollBtn.classList.remove("show-btn"); // در غیر این صورت مخفیش کن
+        }
+      };
+
+      // when the user clicks on the button, softly scroll to the top of the document
+      scrollBtn.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+    </script>
+
   </body>
 </html>
